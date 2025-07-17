@@ -5,7 +5,7 @@ import { axGet } from "./api/client";
 function App() {
   useEffect(() => {
     axGet("/api/hello")
-      .then((res) => setState(res.data))
+      .then((res) => setState(res.data.message))
       .catch((reason) => setState(reason));
   }, []);
 
