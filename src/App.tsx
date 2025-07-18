@@ -4,8 +4,8 @@ import { axGet } from "./api/client";
 
 function App() {
   useEffect(() => {
-    axGet("/api/hello")
-      .then((res) => setState(res.data.message))
+    axGet("/api/posts")
+      .then((res) => setState(JSON.stringify(res.data)))
       .catch((reason) => setState(reason));
   }, []);
 
